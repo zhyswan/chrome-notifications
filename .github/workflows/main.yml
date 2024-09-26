@@ -11,20 +11,20 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '16'
 
       - name: Auto Label Issues
         id: auto-label
         uses: actions/github-script@v6
         with:
           script: |
-            const issueTitle = context.payload.issue.title.toLowerCase();
-            const issueBody = context.payload.issue.body.toLowerCase();
+            const issueTitle = context.payload.issue.title ? context.payload.issue.title.toLowerCase() : '';
+            const issueBody = context.payload.issue.body ? context.payload.issue.body.toLowerCase() : '';
             const labelsToAdd = [];
 
             // 定义关键字和对应的标签
