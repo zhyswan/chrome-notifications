@@ -8,6 +8,9 @@ jobs:
   label-issues:
     runs-on: ubuntu-latest
 
+    permissions:
+      issues: write
+
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
@@ -15,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: "16"
 
       - name: Auto Label Issues
         id: auto-label
