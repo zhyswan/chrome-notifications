@@ -1,6 +1,5 @@
 name: Auto Label Issues
 
-# 触发条件：当有新 Issue 被创建时
 on:
   issues:
     types: [opened]
@@ -27,7 +26,6 @@ jobs:
             const issueBody = context.payload.issue.body ? context.payload.issue.body.toLowerCase() : '';
             const labelsToAdd = [];
 
-            // 定义关键字和对应的标签
             const keywordsToLabels = {
               'bug': 'bug',
               'feature': 'enhancement',
@@ -36,16 +34,14 @@ jobs:
               'question': 'question'
             };
 
-            // 根据关键字匹配标签
             for (const [keyword, label] of Object.entries(keywordsToLabels)) {
               if (issueTitle.includes(keyword) || issueBody.includes(keyword)) {
                 labelsToAdd.push(label);
               }
             }
 
-            // 添加匹配的标签
             if (labelsToAdd.length > 0) {
-              await github.issues.addLabels({
+              await github.rest.issues.addLabels({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: context.issue.number,
