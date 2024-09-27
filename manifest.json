@@ -4,6 +4,7 @@
     "description": "浏览器通知",
     "version": "0.0.1",
     "permissions": [
+        "alarms",
         "notifications"
     ],
     "action": {
