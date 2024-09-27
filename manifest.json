@@ -8,9 +8,11 @@
     ],
     "action": {
         "default_title": "浏览器通知demo"
+
     },
     "background": {
-        "service_worker": "service-worker.js"
+        "service_worker": "service-worker.js",
+        "type": "module"
     },
     "icons": {
         "32": "images/logo-32.png",
