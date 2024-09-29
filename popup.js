@@ -13,9 +13,9 @@
 // limitations under the License.
 
 // 插件方法
-// import { createNotification } from "./utils.js";
+import { createNotification } from "./utils.js";
 // 浏览器方法
-import { createNotification } from "./web.js";
+// import { createNotification } from "./web.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const basic = document.getElementById("basic");
