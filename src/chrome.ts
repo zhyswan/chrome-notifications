@@ -7,7 +7,7 @@ export type NotificationOption = {
   message: string;
   iconUrl?: string;
   action?: {
-    type?: "openUrl";
+    type?: "OpenUrl";
     url?: string;
   };
 };
@@ -25,7 +25,7 @@ export function createNotification({
       console.log("onClicked", nid);
       const action = idActionMap[nid] || {};
       switch (action.type) {
-        case "openUrl":
+        case "OpenUrl":
           chrome.tabs.create({ url: action.url });
           break;
         default:

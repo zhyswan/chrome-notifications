@@ -26,7 +26,7 @@ function createNoti() {
       "必选 最多显示4行，超出会...显示，如果有contextMessage ，则最多3行",
     iconUrl: "images/logo-256.png",
     action: {
-      type: "openUrl",
+      type: "OpenUrl",
       url: "https://www.baidu.com",
     },
   });
