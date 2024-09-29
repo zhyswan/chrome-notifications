@@ -1,6 +1,5 @@
 const defaultIcon = "images/logo-256.png";
 let isNotificationListenerBound = false;
-const idActionMap: Record<string, any> = {};
 export type NotificationOption = {
   id?: string;
   title: string;
@@ -11,6 +10,8 @@ export type NotificationOption = {
     url?: string;
   };
 };
+const idActionMap: Record<string, NotificationOption["action"]> = {};
+
 export function createNotification({
   id,
   title,
@@ -26,7 +27,7 @@ export function createNotification({
       const action = idActionMap[nid] || {};
       switch (action.type) {
         case "OpenUrl":
-          chrome.tabs.create({ url: action.url });
+          action.url && chrome.tabs.create({ url: action.url });
           break;
         default:
           break;
