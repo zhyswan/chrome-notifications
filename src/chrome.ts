@@ -1,12 +1,23 @@
+const defaultIcon = "images/logo-256.png";
 let isNotificationListenerBound = false;
-const idActionMap = {};
+const idActionMap: Record<string, any> = {};
+export type NotificationOption = {
+  id?: string;
+  title: string;
+  message: string;
+  iconUrl?: string;
+  action?: {
+    type?: "openUrl";
+    url?: string;
+  };
+};
 export function createNotification({
   id,
   title,
   message,
   iconUrl,
   action = {},
-}) {
+}: NotificationOption) {
   if (!isNotificationListenerBound) {
     isNotificationListenerBound = true;
     // 通知被点击
@@ -48,12 +59,12 @@ export function createNotification({
     //   });
   }
 
-  let options = {
+  let options: chrome.notifications.NotificationOptions = {
     type: "basic", //image progress 在mac上不显示 list在mac上只显示一条
     title: title,
     // contextMessage: "显示在title 和 message中间，一行粗体消息，超出会...显示",
     message: message,
-    iconUrl: iconUrl || "images/logo-256.png",
+    iconUrl: iconUrl || defaultIcon,
     //   priority: 2,
     // requireInteraction: false, //默认 false 使用 Google Chrome通知； 为true 使用 Google Chrome Helper(Alert) 通知 ，与系统设置有关，需不需要手动关闭与系统设置有关
     // 最多2个按钮

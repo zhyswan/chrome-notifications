@@ -9,10 +9,9 @@
     ],
     "action": {
         "default_title": "浏览器通知demo"
-
     },
     "background": {
-        "service_worker": "service-worker.js",
+        "service_worker": "src/service-worker.ts",
         "type": "module"
     },
     "icons": {

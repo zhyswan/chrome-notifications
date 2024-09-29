@@ -1,34 +1,20 @@
-// Copyright 2023 Google LLC
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     https://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
 // 插件方法
-import { createNotification } from "./utils.js";
+// import { createNotification } from "./chrome";
 // 浏览器方法
-// import { createNotification } from "./web.js";
+import { createNotification } from "./web";
 
 document.addEventListener("DOMContentLoaded", () => {
   const basic = document.getElementById("basic");
   //   const progressNotif = document.getElementById("progress");
   //   const list = document.getElementById("list");
 
-  basic.addEventListener("click", () => {
+  basic!.addEventListener("click", () => {
     createNotification({
       id: "basic",
       title: "通知标题，必须的，一行",
       message:
         "必选 最多显示4行，超出会...显示，如果有contextMessage ，则最多3行",
-      iconUrl: "images/logo-256.png",
+      iconUrl: "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png",
       action: {
         type: "openUrl",
         url: "https://www.baidu.com",

@@ -1,5 +1,5 @@
-import { createNotification } from "./utils.js";
-// import { createNotification } from "./web.js";
+import { createNotification } from "./chrome";
+// import { createNotification } from "./web";
 
 chrome.action.onClicked.addListener(function () {
   chrome.tabs.create({ url: "popup.html" });

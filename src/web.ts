@@ -1,3 +1,4 @@
+import { NotificationOption } from "./chrome";
 // 检查浏览器是否支持通知
 function checkNotificationSupport() {
   return "Notification" in window;
@@ -21,7 +22,7 @@ export function createNotification({
   message,
   iconUrl,
   action = {},
-}) {
+}: NotificationOption) {
   if (!checkNotificationSupport()) {
     console.error("此浏览器不支持通知。");
     return;
@@ -60,7 +61,7 @@ export function createNotification({
           notification.close();
           console.log("通知超时或被收起");
         }
-      }, options.timeout || 5000); // 默认5秒超时
+      }, 5000); // 默认5秒超时
     } else {
       console.error("通知权限被拒绝。");
     }
