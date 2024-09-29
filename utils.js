@@ -67,11 +67,11 @@ export function createNotification({
     // ],
   };
 
-  const createPromise = id
+  const createNotificationsPromise = id
     ? chrome.notifications.create(id, options)
     : chrome.notifications.create(options);
 
-  return createPromise
+  return createNotificationsPromise
     .then((nid) => {
       console.log("通知:", nid);
       idActionMap[nid] = action;
