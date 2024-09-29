@@ -14,7 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "通知标题，必须的，一行",
       message:
         "必选 最多显示4行，超出会...显示，如果有contextMessage ，则最多3行",
-      iconUrl: "images/test2.png",
+      // iconUrl: "images/test2.png",
+      iconUrl: "https://t11.baidu.com/it/u=3646446013,223838069&fm=30&app=106&f=JPEG?w=512&h=512&s=F28D25E06C4394CE863F4910030010DB",
       action: {
         type: "OpenUrl",
         url: "https://www.baidu.com",

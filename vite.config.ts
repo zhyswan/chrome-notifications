@@ -1,13 +1,10 @@
 import { defineConfig } from "vite";
-import webExtension, { readJsonFile } from "vite-plugin-web-extension";
+import webExtension from "vite-plugin-web-extension";
+import Manifest from "./src/manifest";
 
 function generateManifest() {
-  const manifest = readJsonFile("src/manifest.json");
-  const pkg = readJsonFile("package.json");
+  const manifest = Manifest;
   return {
-    name: pkg.name,
-    description: pkg.description,
-    version: pkg.version,
     ...manifest,
   };
 }
