@@ -1,4 +1,4 @@
-const defaultIcon = "images/logo-256.png";
+import defaultIcon from "../public/images/logo-256.png";
 let isNotificationListenerBound = false;
 export type NotificationOption = {
   id?: string;
@@ -23,7 +23,7 @@ export function createNotification({
     isNotificationListenerBound = true;
     // 通知被点击
     chrome.notifications.onClicked.addListener((nid) => {
-      console.log("onClicked", nid);
+      // console.log("onClicked", nid);
       const action = idActionMap[nid] || {};
       switch (action.type) {
         case "OpenUrl":
@@ -65,7 +65,7 @@ export function createNotification({
     title: title,
     // contextMessage: "显示在title 和 message中间，一行粗体消息，超出会...显示",
     message: message,
-    iconUrl: iconUrl || defaultIcon,
+    iconUrl: iconUrl || defaultIcon,  // 方图 最大显示 160 * 160 提供 320 * 320 以适应高分屏
     //   priority: 2,
     // requireInteraction: false, //默认 false 使用 Google Chrome通知； 为true 使用 Google Chrome Helper(Alert) 通知 ，与系统设置有关，需不需要手动关闭与系统设置有关
     // 最多2个按钮
@@ -85,7 +85,7 @@ export function createNotification({
 
   return createNotificationsPromise
     .then((nid) => {
-      console.log("通知:", nid);
+      // console.log("通知:", nid);
       idActionMap[nid] = action;
       return nid;
     })

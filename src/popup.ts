@@ -10,13 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   basic!.addEventListener("click", () => {
     createNotification({
-      id: "basic",
+      // id: "basic",
       title: "通知标题，必须的，一行",
       message:
         "必选 最多显示4行，超出会...显示，如果有contextMessage ，则最多3行",
-      iconUrl: "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png",
+      iconUrl: "images/test2.png",
       action: {
-        type: "openUrl",
+        type: "OpenUrl",
         url: "https://www.baidu.com",
       },
     });

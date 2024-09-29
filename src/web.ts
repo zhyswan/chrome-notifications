@@ -50,7 +50,7 @@ export function createNotification({
       notification.onclick = (event) => {
         console.log("通知被点击", event);
         // 例如，打开一个 URL
-        if (action.type === "openUrl" && action.url) {
+        if (action.type === "OpenUrl" && action.url) {
           window.open(action.url, "_blank");
         }
       };
