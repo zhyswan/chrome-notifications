@@ -65,7 +65,7 @@ export function createNotification({
     title: title,
     // contextMessage: "显示在title 和 message中间，一行粗体消息，超出会...显示",
     message: message,
-    iconUrl: iconUrl || defaultIcon,  // 方图 最大显示 160 * 160 提供 320 * 320 以适应高分屏
+    iconUrl: iconUrl || defaultIcon,  // 方图 最大显示 160 * 160 提供 320 * 320 以适应高分屏, 在background中可以使用网络图片，(其他情况下只能使用插件内图片,尚不确定)
     //   priority: 2,
     // requireInteraction: false, //默认 false 使用 Google Chrome通知； 为true 使用 Google Chrome Helper(Alert) 通知 ，与系统设置有关，需不需要手动关闭与系统设置有关
     // 最多2个按钮
