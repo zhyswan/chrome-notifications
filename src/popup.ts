@@ -1,7 +1,7 @@
 // 插件方法
-// import { createNotification } from "./chrome";
+import { createNotification } from "./chrome";
 // 浏览器方法
-import { createNotification } from "./web";
+// import { createNotification } from "./web";
 
 document.addEventListener("DOMContentLoaded", () => {
   const basic = document.getElementById("basic");
