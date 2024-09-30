@@ -1,5 +1,5 @@
-import { createNotification } from "./chrome";
-// import { createNotification } from "./web";
+import { notify } from "./chrome";
+// import { notify } from "./web";
 
 chrome.action.onClicked.addListener(function () {
   // chrome.tabs.create({ url: "popup.html" });
@@ -21,7 +21,7 @@ chrome.alarms.onAlarm.addListener((alarm) => {
 });
 
 function createNoti() {
-  createNotification({
+  notify({
     title: "通知标题，必须的，一行",
     message:
       "必选 最多显示4行，超出会...显示，如果有contextMessage ，则最多3行",

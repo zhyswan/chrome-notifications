@@ -12,7 +12,7 @@ export type NotificationOption = {
 };
 const idActionMap: Record<string, NotificationOption["action"]> = {};
 
-export function createNotification({
+export function notify({
   id,
   title,
   message,

@@ -16,7 +16,7 @@ function requestNotificationPermission() {
 }
 
 // 创建通知
-export function createNotification({
+export function notify({
   id,
   title,
   message,

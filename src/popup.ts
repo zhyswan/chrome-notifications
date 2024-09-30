@@ -1,7 +1,7 @@
 // 插件方法
-import { createNotification } from "./chrome";
+import { notify } from "./chrome";
 // 浏览器方法
-// import { createNotification } from "./web";
+// import { notify } from "./web";
 
 document.addEventListener("DOMContentLoaded", () => {
   const basic = document.getElementById("basic");
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //   const list = document.getElementById("list");
 
   basic!.addEventListener("click", () => {
-    createNotification({
+    notify({
       // id: "basic",
       title: "通知标题，必须的，一行",
       message:
