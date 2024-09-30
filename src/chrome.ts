@@ -28,6 +28,7 @@ export function createNotification({
       switch (action.type) {
         case "OpenUrl":
           action.url && chrome.tabs.create({ url: action.url });
+          // chrome.notifications.clear(nid);
           break;
         default:
           break;
